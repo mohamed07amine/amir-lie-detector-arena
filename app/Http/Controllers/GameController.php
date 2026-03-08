@@ -11,11 +11,8 @@ use Illuminate\Support\Str;
 class GameController extends Controller
 {
 
-// Zid had l-method l-foq qbel 'results'
 public function index()
 {
-    // Hna dir l-logic bash t-بدا l-lo3ba
-    // Mathalan:
     $games = Game::all();
     return view('welcome', compact('games')); 
 }

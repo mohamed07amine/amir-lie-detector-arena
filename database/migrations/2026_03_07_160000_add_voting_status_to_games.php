@@ -29,8 +29,8 @@ return new class extends Migration
             ");
             
             DB::statement("INSERT INTO games_new (id, name, code, status, current_player_id, created_at, updated_at) 
-                          SELECT id, name, code, COALESCE(status, 'waiting'), current_player_id, created_at, updated_at 
-                          FROM games");
+                        SELECT id, name, code, COALESCE(status, 'waiting'), current_player_id, created_at, updated_at 
+                        FROM games");
             DB::statement("DROP TABLE games");
             DB::statement("ALTER TABLE games_new RENAME TO games");
         } else {
